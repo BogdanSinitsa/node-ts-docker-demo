@@ -1,0 +1,13 @@
+app:
+  build: .
+  volumes:
+    - ./src:/usr/app/src
+  ports:
+    - 9229:9229
+    - 3010:3010
+  links:
+    - mongodb
+mongodb:
+  image: mongo
+  ports:
+    - 27017:27017
